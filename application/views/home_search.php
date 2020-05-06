@@ -5,7 +5,7 @@
 			<img class="one-third align-self-end order-md-last img-fluid" src="<?php echo base_url(); ?>asset/images/undraw_work_time_lhoj.svg" alt="">
 			<div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
 				<div class="text mt-5">
-					<p class="mb-4 mt-5 pt-5">Kita Mempunyai <span class="number" data-number="184652">0</span> tawaran pekerjaan hebat yang pantas Anda dapatkan</p>
+					<p class="mb-4 mt-5 pt-5">Kita Mempunyai <span class="number" data-number="<?php echo $total["COUNT('id_loker')"] ?>">0</span> tawaran pekerjaan hebat yang pantas Anda dapatkan</p>
 					<h1 class="mb-2">Menargetkan Perkerjaan di Jawa Timur</h1>
 
 					<div class="ftco-search">

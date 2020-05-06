@@ -8,6 +8,11 @@ class loker_model extends CI_Model
         return $this->db->get('loker');
     }
 
+    public function TotalLoker()
+    {
+        return $this->db->query("SELECT COUNT('id_loker') FROM loker")->row_array();
+    }
+
     public function getLokerKeyword($keyword)
     {
         $this->db->select('*');
