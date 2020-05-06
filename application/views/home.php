@@ -109,28 +109,217 @@
 					</div>
 				</div>
 				<div class="row">
-					<?php foreach ($loker as $lkr) { ?>
-						<div class="col-md-12 ftco-animate">
-							<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
-								<div class="one-third mb-4 mb-md-0">
-									<div class="job-post-item-header d-flex align-items-center">
-										<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>Login"><?php echo $lkr->nama_loker ?></a></h2>
-										<div class="badge-wrap">
-											<span class="bg-primary text-white badge py-2 px-3"><?php echo $lkr->kategori ?></span>
-										</div>
-									</div>
-									<div class="job-post-item-body d-block d-md-flex">
 
-										<div><span class="icon-my_location"></span> <span><?php echo $lkr->alamat_lkr ?></span></div>
+					<div class="col-md-12 ftco-animate">
+						<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
+							<div class="one-third mb-4 mb-md-0">
+								<div class="job-post-item-header d-flex align-items-center">
+									<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>Login"><?php echo $loker[0]->nama_loker ?></a></h2>
+									<div class="badge-wrap">
+										<span class="bg-primary text-white badge py-2 px-3"><?php echo $loker[0]->kategori ?></span>
 									</div>
 								</div>
+								<div class="job-post-item-body d-block d-md-flex">
 
-								<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-									<a href="<?php echo base_url(); ?>Login" class="btn btn-primary py-2">Apply Job</a>
+									<div><span class="icon-my_location"></span> <span><?php echo $loker[0]->alamat_lkr ?></span></div>
 								</div>
 							</div>
-						</div><!-- end -->
-					<?php } ?>
+
+							<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+								<a href="<?php echo base_url(); ?>Login" class="btn btn-primary py-2">Apply Job</a>
+							</div>
+						</div>
+					</div><!-- end -->
+
+					<div class="col-md-12 ftco-animate">
+						<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
+							<div class="one-third mb-4 mb-md-0">
+								<div class="job-post-item-header d-flex align-items-center">
+									<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>Login"><?php echo $loker[1]->nama_loker ?></a></h2>
+									<div class="badge-wrap">
+										<span class="bg-primary text-white badge py-2 px-3"><?php echo $loker[1]->kategori ?></span>
+									</div>
+								</div>
+								<div class="job-post-item-body d-block d-md-flex">
+
+									<div><span class="icon-my_location"></span> <span><?php echo $loker[1]->alamat_lkr ?></span></div>
+								</div>
+							</div>
+
+							<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+								<a href="<?php echo base_url(); ?>Login" class="btn btn-primary py-2">Apply Job</a>
+							</div>
+						</div>
+					</div><!-- end -->
+
+					<div class="col-md-12 ftco-animate">
+						<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
+							<div class="one-third mb-4 mb-md-0">
+								<div class="job-post-item-header d-flex align-items-center">
+									<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>Login"><?php echo $loker[2]->nama_loker ?></a></h2>
+									<div class="badge-wrap">
+										<span class="bg-primary text-white badge py-2 px-3"><?php echo $loker[2]->kategori ?></span>
+									</div>
+								</div>
+								<div class="job-post-item-body d-block d-md-flex">
+
+									<div><span class="icon-my_location"></span> <span><?php echo $loker[2]->alamat_lkr ?></span></div>
+								</div>
+							</div>
+
+							<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+								<a href="<?php echo base_url(); ?>Login" class="btn btn-primary py-2">Apply Job</a>
+							</div>
+						</div>
+					</div><!-- end -->
+
+					<div class="col-md-12 ftco-animate">
+						<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
+							<div class="one-third mb-4 mb-md-0">
+								<div class="job-post-item-header d-flex align-items-center">
+									<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>Login"><?php echo $loker[3]->nama_loker ?></a></h2>
+									<div class="badge-wrap">
+										<span class="bg-primary text-white badge py-2 px-3"><?php echo $loker[3]->kategori ?></span>
+									</div>
+								</div>
+								<div class="job-post-item-body d-block d-md-flex">
+
+									<div><span class="icon-my_location"></span> <span><?php echo $loker[3]->alamat_lkr ?></span></div>
+								</div>
+							</div>
+
+							<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+								<a href="<?php echo base_url(); ?>Login" class="btn btn-primary py-2">Apply Job</a>
+							</div>
+						</div>
+					</div><!-- end -->
+
+					<div class="col-md-12 ftco-animate">
+						<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
+							<div class="one-third mb-4 mb-md-0">
+								<div class="job-post-item-header d-flex align-items-center">
+									<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>Login"><?php echo $loker[4]->nama_loker ?></a></h2>
+									<div class="badge-wrap">
+										<span class="bg-primary text-white badge py-2 px-3"><?php echo $loker[4]->kategori ?></span>
+									</div>
+								</div>
+								<div class="job-post-item-body d-block d-md-flex">
+
+									<div><span class="icon-my_location"></span> <span><?php echo $loker[4]->alamat_lkr ?></span></div>
+								</div>
+							</div>
+
+							<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+								<a href="<?php echo base_url(); ?>Login" class="btn btn-primary py-2">Apply Job</a>
+							</div>
+						</div>
+					</div><!-- end -->
+
+					<div class="col-md-12 ftco-animate">
+						<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
+							<div class="one-third mb-4 mb-md-0">
+								<div class="job-post-item-header d-flex align-items-center">
+									<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>Login"><?php echo $loker[5]->nama_loker ?></a></h2>
+									<div class="badge-wrap">
+										<span class="bg-primary text-white badge py-2 px-3"><?php echo $loker[5]->kategori ?></span>
+									</div>
+								</div>
+								<div class="job-post-item-body d-block d-md-flex">
+
+									<div><span class="icon-my_location"></span> <span><?php echo $loker[5]->alamat_lkr ?></span></div>
+								</div>
+							</div>
+
+							<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+								<a href="<?php echo base_url(); ?>Login" class="btn btn-primary py-2">Apply Job</a>
+							</div>
+						</div>
+					</div><!-- end -->
+
+					<div class="col-md-12 ftco-animate">
+						<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
+							<div class="one-third mb-4 mb-md-0">
+								<div class="job-post-item-header d-flex align-items-center">
+									<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>Login"><?php echo $loker[6]->nama_loker ?></a></h2>
+									<div class="badge-wrap">
+										<span class="bg-primary text-white badge py-2 px-3"><?php echo $loker[6]->kategori ?></span>
+									</div>
+								</div>
+								<div class="job-post-item-body d-block d-md-flex">
+
+									<div><span class="icon-my_location"></span> <span><?php echo $loker[6]->alamat_lkr ?></span></div>
+								</div>
+							</div>
+
+							<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+								<a href="<?php echo base_url(); ?>Login" class="btn btn-primary py-2">Apply Job</a>
+							</div>
+						</div>
+					</div><!-- end -->
+
+					<div class="col-md-12 ftco-animate">
+						<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
+							<div class="one-third mb-4 mb-md-0">
+								<div class="job-post-item-header d-flex align-items-center">
+									<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>Login"><?php echo $loker[7]->nama_loker ?></a></h2>
+									<div class="badge-wrap">
+										<span class="bg-primary text-white badge py-2 px-3"><?php echo $loker[7]->kategori ?></span>
+									</div>
+								</div>
+								<div class="job-post-item-body d-block d-md-flex">
+
+									<div><span class="icon-my_location"></span> <span><?php echo $loker[7]->alamat_lkr ?></span></div>
+								</div>
+							</div>
+
+							<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+								<a href="<?php echo base_url(); ?>Login" class="btn btn-primary py-2">Apply Job</a>
+							</div>
+						</div>
+					</div><!-- end -->
+
+					<div class="col-md-12 ftco-animate">
+						<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
+							<div class="one-third mb-4 mb-md-0">
+								<div class="job-post-item-header d-flex align-items-center">
+									<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>Login"><?php echo $loker[8]->nama_loker ?></a></h2>
+									<div class="badge-wrap">
+										<span class="bg-primary text-white badge py-2 px-3"><?php echo $loker[8]->kategori ?></span>
+									</div>
+								</div>
+								<div class="job-post-item-body d-block d-md-flex">
+
+									<div><span class="icon-my_location"></span> <span><?php echo $loker[8]->alamat_lkr ?></span></div>
+								</div>
+							</div>
+
+							<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+								<a href="<?php echo base_url(); ?>Login" class="btn btn-primary py-2">Apply Job</a>
+							</div>
+						</div>
+					</div><!-- end -->
+
+					<div class="col-md-12 ftco-animate">
+						<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
+							<div class="one-third mb-4 mb-md-0">
+								<div class="job-post-item-header d-flex align-items-center">
+									<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>Login"><?php echo $loker[9]->nama_loker ?></a></h2>
+									<div class="badge-wrap">
+										<span class="bg-primary text-white badge py-2 px-3"><?php echo $loker[9]->kategori ?></span>
+									</div>
+								</div>
+								<div class="job-post-item-body d-block d-md-flex">
+
+									<div><span class="icon-my_location"></span> <span><?php echo $loker[9]->alamat_lkr ?></span></div>
+								</div>
+							</div>
+
+							<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+								<a href="<?php echo base_url(); ?>Login" class="btn btn-primary py-2">Apply Job</a>
+							</div>
+						</div>
+					</div><!-- end -->
+
 					<!--  -->
 				</div>
 			</div>
