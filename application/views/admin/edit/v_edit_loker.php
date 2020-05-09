@@ -19,8 +19,6 @@
         <input type="hidden" class="form-control-file" id="id" name="id" value="<?php echo $lkr->id_loker ?>">
         <div class="form-group">
             <img src="<?php echo base_url(); ?>foto_loker/<?php echo $lkr->gambar ?>" alt="" width="20%"><br>
-            <label for="gambar">Upload foto</label>
-            <input type="file" class="form-control-file" id="gambar" name="gambar" value="<?php echo $lkr->gambar ?>">
         </div>
         <div class="form-group">
             <label for="nama_loker">Nama Loker</label>

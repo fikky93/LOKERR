@@ -23,31 +23,30 @@
           <thead>
             <tr>
               <th>No</th>
-              <th>Nama</th>
+              <th>Nama Pekerjaan</th>
+              <th>Nama lengkap</th>
               <th>Alamat</th>
               <th>No Telp</th>
-              <th>Email</th>
-              <th>CV</th>
-              <th>Ijazah</th>
-              <th></th>
-              <th>Nama Perusahaan</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+            <?php
+            $no = 1;
+            foreach ($form as $f) {
+            ?>
+              <tr>
+                <td><?= $no++ ?></td>
+                <td><?= $f->nama_pekerjaan ?></td>
+                <td><?= $f->nama_lengkap ?></td>
+                <td><?= $f->alamat_f ?></td>
+                <td><?= $f->no_telp_f ?></td>
+                <td>
+                  <a href="<?php echo base_url(); ?>index.php/Page/detailForm/<?= $f->id_form_pelamaran ?>/<?= $f->id_pelamar ?>" class="btn btn-info">Detail</a>
+                  <a href="<?php echo base_url(); ?>index.php/Page/hapusForm/<?= $f->id_form_pelamaran  ?>" class="btn btn-danger">Hapus</a>
+                </td>
+              </tr>
+            <?php } ?>
           </tbody>
         </table>
       </div>

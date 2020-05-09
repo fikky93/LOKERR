@@ -19,8 +19,6 @@
         <input type="hidden" class="form-control-file" id="id" name="id" value="<?php echo $plr->id_pelamar ?>">
         <div class="form-group">
             <img src="<?php echo base_url(); ?>foto_pelamar/<?php echo $plr->foto_profil ?>" alt="" width="20%"><br>
-            <label for="foto">Uploud foto</label>
-            <input type="file" class="form-control-file" id="foto" name="foto">
         </div>
         <div class="form-group">
             <label for="nama">Nama</label>

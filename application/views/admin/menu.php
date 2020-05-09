@@ -8,7 +8,7 @@
         <li><a href="<?php echo base_url() . 'index.php/page/data_pelamar' ?>">Data Pelamar</a></li>
         <li><a href="<?php echo base_url() . 'index.php/page/data_perusahaan' ?>">Data Perusahaan</a></li>
         <li><a href="<?php echo base_url() . 'index.php/page/data_loker' ?>">LOKER</a></li>
-        <li><a href="<?php echo base_url() . 'index.php/page/data_pelamaran' ?>">Dara Pelamaran</a></li>
+        <li><a href="<?php echo base_url() . 'index.php/page/data_pelamaran' ?>">Data Pelamaran</a></li>
 
       </ul>
 

@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Sign up</h2>
+                        <h2 class="form-title">Sign up Perusahaan</h2>
                         <?php echo validation_errors(); ?>
 
                         <?php echo form_open_multipart('registrasiPerusahaan/tambahDataPerusahaan'); ?>
@@ -77,10 +77,7 @@
 
                         <?php echo form_close(); ?>
                     </div>
-                    <!-- <div class="signup-image">
-                        <figure><img src="<?php echo base_url() . 'asset/login/images/signup-image.jpg' ?>" alt="sing up image"></figure>
 
-                    </div> -->
                 </div>
             </div>
         </section>

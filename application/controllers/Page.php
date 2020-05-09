@@ -12,6 +12,7 @@ class Page extends CI_Controller
     $this->load->model('pelamar_model');
     $this->load->model('perusahaan_model');
     $this->load->model('loker_model');
+    $this->load->model('form_model');
     $this->load->helper('url');
     $this->load->helper('form');
   }
@@ -81,84 +82,30 @@ class Page extends CI_Controller
   function editDataPelamar()
   {
     $id = $this->input->post('id');
-    $data1 = $this->pelamar_model->GetPelamarById($id);
-    $nama = './foto_pelamar/' . $data1->foto_profil;
 
-    if (is_readable($nama) && unlink($nama)) {
+    $data = array(
 
-      $foto = $this->input->post('nama');
+      'nama' => $this->input->post('nama'),
+      'username' => $this->input->post('username'),
+      'password' => $this->input->post('password'),
+      'tgl_lahir' => $this->input->post('tgl_lahir'),
+      'email' => $this->input->post('email'),
+      'alamat' => $this->input->post('alamat'),
+      'no_telp' => $this->input->post('no_telp'),
+      'lulusan' => $this->input->post('lulusan'),
+      'tinggi_bdn' => $this->input->post('tinggi_bdn'),
+      'berat_bdn' => $this->input->post('berat_bdn'),
+      'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+      'level' => 2
+    );
 
-      $config['upload_path']          = './foto_pelamar/';
-      $config['allowed_types']        = 'jpg|png|jpeg';
-      $config['max_size']             = 5024;
-      $config['file_name']            = $foto;
+    $where = array(
+      'id_pelamar' => $id
+    );
 
-      $this->load->library('upload', $config);
+    $this->pelamar_model->updateDataPelamar($where, $data, 'reg_pelamar');
 
-      if (!$this->upload->do_upload('foto')) {
-        $error =  $this->upload->display_errors();
-        echo $error;
-      }
-
-      $upload_data = $this->upload->data();
-      $file_name = $upload_data['file_name'];
-
-      $data = array(
-        'foto_profil' => $file_name,
-        'nama' => $this->input->post('nama'),
-        'username' => $this->input->post('username'),
-        'password' => $this->input->post('password'),
-        'tgl_lahir' => $this->input->post('tgl_lahir'),
-        'email' => $this->input->post('email'),
-        'alamat' => $this->input->post('alamat'),
-        'no_telp' => $this->input->post('no_telp'),
-        'lulusan' => $this->input->post('lulusan'),
-        'tinggi_bdn' => $this->input->post('tinggi_bdn'),
-        'berat_bdn' => $this->input->post('berat_bdn'),
-        'jenis_kelamin' => $this->input->post('jenis_kelamin'),
-        'level' => 2
-      );
-
-      $this->pelamar_model->UpdateFile($id, $data);
-      $data['reg_pelamar'] = $this->pelamar_model->GetPelamar()->result();
-
-      if ($this->session->userdata('akses') == '1') {
-        $this->load->view('admin/v_data_pelamar', $data);
-      } else {
-        echo "Anda tidak berhak mengakses halaman ini";
-      }
-    } else {
-
-      $data = array(
-        'foto_profil' => $this->input->post('foto'),
-        'nama' => $this->input->post('nama'),
-        'username' => $this->input->post('username'),
-        'password' => $this->input->post('password'),
-        'tgl_lahir' => $this->input->post('tgl_lahir'),
-        'email' => $this->input->post('email'),
-        'alamat' => $this->input->post('alamat'),
-        'no_telp' => $this->input->post('no_telp'),
-        'lulusan' => $this->input->post('lulusan'),
-        'tinggi_bdn' => $this->input->post('tinggi_bdn'),
-        'berat_bdn' => $this->input->post('berat_bdn'),
-        'jenis_kelamin' => $this->input->post('jenis_kelamin'),
-        'level' => 2
-      );
-
-      $where = array(
-        'id_pelamar' => $id
-      );
-
-      $this->pelamar_model->updateDataPelamar($where, $data, 'reg_pelamar');
-
-      $data['reg_pelamar'] = $this->pelamar_model->GetPelamar()->result();
-
-      if ($this->session->userdata('akses') == '1') {
-        $this->load->view('admin/v_data_pelamar', $data);
-      } else {
-        echo "Anda tidak berhak mengakses halaman ini";
-      }
-    }
+    echo $this->data_pelamar();
   }
 
   //===========================================================================================================================//
@@ -227,6 +174,46 @@ class Page extends CI_Controller
     }
   }
 
+  function editPerusahaan($id)
+  {
+
+    $where = array('id_perusahaan' => $id);
+    $data['pers'] = $this->perusahaan_model->edit_TampilPerusahaan($where, 'reg_perusahaan')->result();
+
+    if ($this->session->userdata('akses') == '1') {
+      $this->load->view('admin/edit/v_edit_perusahaan', $data);
+    } else {
+      echo "Anda tidak berhak mengakses halaman ini";
+    }
+  }
+
+  function editDataPerusahaan()
+  {
+    $id = $this->input->post('id');
+
+    $data = array(
+      'nama' => $this->input->post('nama'),
+      'username' => $this->input->post('username'),
+      'password' => $this->input->post('password'),
+      'email' => $this->input->post('email'),
+      'alamat' => $this->input->post('alamat'),
+      'no_telp' => $this->input->post('no_telp'),
+      'fax' => $this->input->post('fax'),
+      'website' => $this->input->post('website'),
+      'deskripsi' => $this->input->post('deskripsi'),
+      'contact_person' => $this->input->post('contact_person'),
+      'level' => 3
+    );
+
+    $where = array(
+      'id_perusahaan' => $id
+    );
+
+    $this->perusahaan_model->updateDataPerusahaan($where, $data, 'reg_perusahaan');
+
+    echo $this->data_perusahaan();
+  }
+
   //===========================================================================================================================//
 
   function data_loker()
@@ -287,80 +274,26 @@ class Page extends CI_Controller
   function editDataLoker()
   {
     $id = $this->input->post('id');
-    $data = $this->loker_model->GetLokerById($id);
-    $nama = './foto_loker/ ' . $data->gambar;
+    $data = array(
+      'nama_loker' => $this->input->post('nama_loker'),
+      'alamat_lkr' => $this->input->post('alamat'),
+      'deskripsi' => $this->input->post('deskripsi'),
+      'kategori' => $this->input->post('kategori'),
+      'id_perusahaan' => $this->input->post('id_perusahaan')
+    );
 
-    if (is_readable($nama) && unlink($nama)) {
+    $where = array(
+      'id_loker' => $id
+    );
 
-      $foto = $this->input->post('nama_loker');
+    $this->loker_model->updateDataLoker($where, $data, 'loker');
 
-      $config['upload_path']          = './foto_loker';
-      $config['allowed_types']        = 'jpg|png|jpeg';
-      $config['max_size']             = 5024;
-      $config['file_name']            = $foto;
+    $data['loker'] = $this->loker_model->GetLoker()->result();
 
-      $this->load->library('upload', $config);
-
-      if (!$this->upload->do_upload('gambar')) {
-        $error =  $this->upload->display_errors();
-        echo $error;
-      }
-
-      $upload_data = $this->upload->data();
-      $file_name = $upload_data['file_name'];
-
-      $data = array(
-        'gambar' => $file_name,
-        'nama_loker' => $this->input->post('nama_loker'),
-        'alamat' => $this->input->post('alamat'),
-        'deskripsi' => $this->input->post('deskripsi'),
-        'kategori' => $this->input->post('kategori'),
-        'id_perusahaan' => $this->input->post('id_perusahaan')
-      );
-
-      $where = array(
-        'id_loker' => $id
-      );
-
-      $this->loker_model->updateDataLoker($where, $data, 'loker');
-
-      $data['loker'] = $this->loker_model->GetLoker()->result();
-
-      if ($this->session->userdata('akses') == '1') {
-        $this->load->view('admin/v_data_loker', $data);
-      } else {
-        echo "Anda tidak berhak mengakses halaman ini";
-      }
+    if ($this->session->userdata('akses') == '1') {
+      $this->load->view('admin/v_data_loker', $data);
     } else {
-      // echo "Data gambar harus diisi";
-      // $data = array(
-      //   'nama' => $this->input->post('nama'),
-      //   'username' => $this->input->post('username'),
-      //   'password' => $this->input->post('password'),
-      //   'tgl_lahir' => $this->input->post('tgl_lahir'),
-      //   'email' => $this->input->post('email'),
-      //   'alamat' => $this->input->post('alamat'),
-      //   'no_telp' => $this->input->post('no_telp'),
-      //   'lulusan' => $this->input->post('lulusan'),
-      //   'tinggi_bdn' => $this->input->post('tinggi_bdn'),
-      //   'berat_bdn' => $this->input->post('berat_bdn'),
-      //   'jenis_kelamin' => $this->input->post('jenis_kelamin'),
-      //   'level' => 2
-      // );
-
-      // $where = array(
-      //   'id_pelamar' => $id
-      // );
-
-      // $this->pelamar_model->updateDataPelamar($where, $data, 'reg_pelamar');
-
-      // $data['reg_pelamar'] = $this->pelamar_model->GetPelamar()->result();
-
-      // if ($this->session->userdata('akses') == '1') {
-      //   $this->load->view('admin/v_data_pelamar', $data);
-      // } else {
-      //   echo "Anda tidak berhak mengakses halaman ini";
-      // }
+      echo "Anda tidak berhak mengakses halaman ini";
     }
   }
 
@@ -368,11 +301,30 @@ class Page extends CI_Controller
 
   function data_pelamaran()
   {
+    $data['form'] = $this->form_model->GetFormAll()->result();
 
     if ($this->session->userdata('akses') == '1') {
-      $this->load->view('admin/v_data_pelamaran');
+      $this->load->view('admin/v_data_pelamaran', $data);
     } else {
       echo "Anda tidak berhak mengakses halaman ini";
     }
+  }
+
+  function detailForm($id, $id1)
+  {
+    $data['form'] = $this->form_model->GetFormById($id);
+    $data['pelamar'] = $this->form_model->GetFormJoinFoto($id1);
+
+    if ($this->session->userdata('akses') == '1') {
+      $this->load->view('admin/detail/v_detail_pelamaran', $data);
+    } else {
+      echo "Anda tidak berhak mengakses halaman ini";
+    }
+  }
+  function hapusForm($id)
+  {
+    $this->form_model->deleteFormAdmin($id);
+
+    echo $this->data_pelamaran();
   }
 }

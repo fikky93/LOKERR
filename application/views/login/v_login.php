@@ -22,13 +22,12 @@
       <div class="container">
         <div class="signin-content">
           <div class="signin-image">
-            <figure><img src="<?php echo base_url() . 'asset/login/images/signin-image.jpg' ?>" alt="sing up image"></figure>
-
+            <figure><img src="<?php echo base_url() . 'asset/login/images/57314.jpg' ?>" width="100%" alt="sing up image"></figure>
             <a href="<?php echo base_url(); ?>registrasiPelamar" class="signup-image-link">
-              <h6>Create applicant account</h6>
+              <h6>Daftar Akun Pelamar</h6>
             </a>
             <a href="<?php echo base_url(); ?>registrasiPerusahaan" class="signup-image-link">
-              <h6>Create a company account</h6>
+              <h6>Daftar Akun Perusahaan</h6>
             </a>
 
           </div>

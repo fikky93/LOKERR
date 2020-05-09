@@ -1,6 +1,11 @@
 <?php
 class form_model extends CI_Model
 {
+    public function GetFormAll()
+    {
+        return $this->db->get('form_pelamaran');
+    }
+
     public function GetFormJoin($id)
     {
         $this->db->select('*');
@@ -28,6 +33,16 @@ class form_model extends CI_Model
     {
         $_id = $this->db->get_where('form_pelamaran', ['id_loker' => $id])->row();
         $query = $this->db->delete('form_pelamaran', ['id_loker' => $id]);
+        if ($query) {
+            unlink("form/" . $_id->upload_cv);
+            unlink("form/" . $_id->upload_ijazah);
+        }
+    }
+
+    public function deleteFormAdmin($id)
+    {
+        $_id = $this->db->get_where('form_pelamaran', ['id_form_pelamaran' => $id])->row();
+        $query = $this->db->delete('form_pelamaran', ['id_form_pelamaran' => $id]);
         if ($query) {
             unlink("form/" . $_id->upload_cv);
             unlink("form/" . $_id->upload_ijazah);
