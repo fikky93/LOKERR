@@ -32,7 +32,31 @@
                         <p class="card-text">Website : <?= $perusahaan->website ?></p>
                         <p class="card-text">Deskripsi : <?= $perusahaan->deskripsi ?></p>
                         <p class="card-text">Contact Person : <?= $perusahaan->contact_person ?></p>
-                        <p class="card-text">Level : <?= $perusahaan->level ?></p>
+
+                        <form action="<?php echo base_url(); ?>Page/editLevel" method="post">
+                            <div class="form-row">
+                                <div class="col">
+                                    <input type="hidden" name="id" id="id" value="<?php echo $perusahaan->id_perusahaan ?>">
+                                    <select id="level" class="form-control" name="level">
+                                        <option value="0">BELUM DI VERIFIKASI</option>
+                                        <option value="3">VERIFIKASI</option>
+                                        <option value="
+                            <?php if ($perusahaan->level != 3) { ?>
+                                " selected hidden>BELUM DI VERIFIKASI</option>
+                                    <?php } else { ?>
+                                        "selected hidden> VERIFIKASI</option>
+                                    <?php } ?>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <button type="submit">Pilih</button>
+                                    <hr>
+                                </div>
+                            </div>
+
+
+
+                        </form>
                         <a href="<?= base_url(); ?>index.php/page/data_perusahaan" class="btn btn-primary">Kembali</a>
                     </div>
                 </div>

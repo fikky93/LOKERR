@@ -24,52 +24,53 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
+                        <?php echo validation_errors(); ?>
 
                         <?php echo form_open_multipart('registrasiPelamar/tambahDataPelamar'); ?>
 
                         <div class="form-group">
-                            <label for="foto">Uploud foto</label><br><br>
-                            <input type="file" class="form-control-file" id="foto" name="foto">
+                            <h6>Foto</h6>
+                            <input type="file" class="form-control" id="foto" name="foto">
                         </div>
                         <div class="form-group">
-                            <label for="nama"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" name="nama" id="nama" placeholder="Nama" />
+                            <h6>Nama</h6>
+                            <input type="text" name="nama" id="nama" class="form-control" />
                         </div>
                         <div class="form-group">
-                            <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" name="username" id="username" placeholder="Username" />
+                            <h6>Username</h6>
+                            <input type="text" name="username" id="username" class="form-control" />
                         </div>
                         <div class="form-group">
-                            <label for="password"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="password" name="password" id="password" placeholder="Password" />
+                            <h6>Password</h6>
+                            <input type="password" name="password" id="password" class="form-control" />
                         </div>
                         <div class="form-group">
-                            <label for="tgl_lahir"></label>
-                            <input type="teks" class="form-control" id="tgl_lahir" name="tgl_lahir" placeholder="Tanggal lahir">
+                            <h6>Tanggal lahir</h6>
+                            <input type="teks" class="form-control" id="tgl_lahir" name="tgl_lahir">
                             <small id="#" class="form-text text-muted">* penulisan format (Tahun-Bulan-Tanggal)</small>
                         </div>
                         <div class="form-group">
-                            <label for="email"><i class="zmdi zmdi-email"></i></label>
-                            <input type="email" name="email" id="email" placeholder="Email" />
+                            <h6>Email</h6>
+                            <input type="email" name="email" id="email" class="form-control" />
                         </div>
                         <div class="form-group">
-                            <label for="no_telp" class="zmdi zmdi-account material-icons-name"></label>
-                            <input type="teks" class="form-control" id="no_telp" name="no_telp" placeholder="No HP">
+                            <h6>No Telp</h6>
+                            <input type="teks" class="form-control" id="no_telp" name="no_telp">
                         </div>
                         <div class="form-group">
-                            <label for="tinggi_bdn" class="zmdi zmdi-account material-icons-name"></label>
-                            <input type="number" class="form-control" id="tinggi_bdn" name="tinggi_bdn" placeholder="Tinggi Badan">
+                            <h6>Tinggi Badan</h6>
+                            <input type="number" class="form-control" id="tinggi_bdn" name="tinggi_bdn">
                         </div>
                         <div class="form-group">
-                            <label for="berat_bdn" class="zmdi zmdi-account material-icons-name"></label>
-                            <input type="number" class="form-control" id="berat_bdn" name="berat_bdn" placeholder="Berat Badan">
+                            <h6>Berat Badan</h6>
+                            <input type="number" class="form-control" id="berat_bdn" name="berat_bdn">
                         </div>
                         <div class="form-group">
-                            <label for="alamat"></label>
-                            <textarea class="form-control" id="alamat" rows="6" name="alamat" placeholder="Alamat"></textarea>
+                            <h6>Alamat</h6>
+                            <textarea class="form-control" id="alamat" rows="6" name="alamat" style="resize: none; width: 100%; height: 100px;"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="lulusan">Lulusan</label><br><br>
+                            <h6>Lulusan</h6>
                             <select class="form-control" id="lulusan" name="lulusan">
                                 <option value="SMA/SMK">SMA / SMK</option>
                                 <option value="D3">D3</option>
@@ -78,7 +79,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="jenis_kelamin">Jenis Kelamin</label><br><br>
+                            <h6>Jenis Kelamin</h6>
                             <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
                                 <option value="laki laki">Laki laki</option>
                                 <option value="perempuan">Perempuan</option>
@@ -92,10 +93,7 @@
 
                         <?php echo form_close(); ?>
                     </div>
-                    <div class="signup-image">
-                        <figure><img src="<?php echo base_url() . 'asset/login/images/signup-image.jpg' ?>" alt="sing up image"></figure>
 
-                    </div>
                 </div>
             </div>
         </section>

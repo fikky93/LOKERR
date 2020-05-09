@@ -18,58 +18,58 @@
 
     <div class="main">
 
-        <!-- Sign up form -->
         <section class="signup">
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
+                        <?php echo validation_errors(); ?>
 
                         <?php echo form_open_multipart('registrasiPerusahaan/tambahDataPerusahaan'); ?>
 
                         <div class="form-group">
-                            <label for="logo">Upload logo</label><br><br>
-                            <input type="file" class="form-control-file" id="logo" name="logo">
+                            <h6>LOGO</h6>
+                            <input type="file" class="form-control" id="logo" name="logo" placeholder="LOGO">
                         </div>
                         <div class="form-group">
-
-                            <input type="teks" class="form-control" id="nama" name="nama" placeholder="Nama">
+                            <h6>Nama Perusahaan</h6>
+                            <input type="teks" class="form-control" id="nama" name="nama">
                         </div>
                         <div class="form-group">
-
-                            <input type="teks" class="form-control" id="username" name="username" placeholder="Username">
+                            <h6>Username login</h6>
+                            <input type="teks" class="form-control" id="username" name="username">
                         </div>
                         <div class="form-group">
-
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                            <h6>Password</h6>
+                            <input type="password" class="form-control" id="password" name="password">
                         </div>
                         <div class="form-group">
-
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                            <h6>Email</h6>
+                            <input type="email" class="form-control" id="email" name="email">
                         </div>
                         <div class="form-group">
-
-                            <textarea class="form-control" id="alamat" style="resize: none; width: 290px; height: 100px;" name="alamat" placeholder="Alamat"></textarea>
+                            <h6>Alamat Perusahaan</h6>
+                            <textarea class="form-control" id="alamat" style="resize: none; width: 100%; height: 100px;" name="alamat"></textarea>
                         </div>
                         <div class="form-group">
-
-                            <input type="teks" class="form-control" id="no_telp" name="no_telp" placeholder="No Telepon">
+                            <h6>No Telp</h6>
+                            <input type="teks" class="form-control" id="no_telp" name="no_telp">
                         </div>
                         <div class="form-group">
-
-                            <input type="teks" class="form-control" id="fax" name="fax" placeholder="Fax">
+                            <h6>Fax</h6>
+                            <input type="teks" class="form-control" id="fax" name="fax">
                         </div>
                         <div class="form-group">
-
-                            <input type="teks" class="form-control" id="website" name="website" placeholder="Website">
+                            <h6>Website</h6>
+                            <input type="teks" class="form-control" id="website" name="website">
                         </div>
                         <div class="form-group">
-
-                            <textarea class="form-control" id="deskripsi" style="width: 290px; height: 100px;" name="deskripsi" placeholder="Deskripsi"></textarea>
+                            <h6>Contact Person</h6>
+                            <input type="teks" class="form-control" id="contact_person" name="contact_person">
                         </div>
                         <div class="form-group">
-
-                            <input type="teks" class="form-control" id="contact_person" name="contact_person" placeholder="Contact Person">
+                            <h6>Deskripsi</h6>
+                            <textarea class="form-control" id="deskripsi" style="resize: none; width: 100%; height: 100px;" name="deskripsi"></textarea>
                         </div>
                         <div class="form-group form-button">
                             <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
@@ -77,10 +77,10 @@
 
                         <?php echo form_close(); ?>
                     </div>
-                    <div class="signup-image">
+                    <!-- <div class="signup-image">
                         <figure><img src="<?php echo base_url() . 'asset/login/images/signup-image.jpg' ?>" alt="sing up image"></figure>
 
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

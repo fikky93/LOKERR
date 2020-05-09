@@ -52,10 +52,16 @@ class Login extends CI_Controller
 
 			$data = $cek_perusahaan->row_array();
 			$this->session->set_userdata('masuk', TRUE);
-			$this->session->set_userdata('akses', '3');
-			$this->session->set_userdata('ses_id', $data['id_perusahaan']);
-			$this->session->set_userdata('ses_nama', $data['nama']);
-			redirect('c_perusahaan/HomePerusahaan');
+			if ($data['level'] == '3') {
+				$this->session->set_userdata('akses', '3');
+				$this->session->set_userdata('ses_id', $data['id_perusahaan']);
+				$this->session->set_userdata('ses_nama', $data['nama']);
+				redirect('c_perusahaan/HomePerusahaan');
+			} else {
+				$url = base_url('login');
+				echo $this->session->set_flashdata('msg', 'AKUN BELUM DI VERIFIKASI');
+				redirect($url);
+			}
 		} else {  // jika username dan password tidak ditemukan atau salah
 			$url = base_url('login');
 			echo $this->session->set_flashdata('msg', 'Username Atau Password Salah');

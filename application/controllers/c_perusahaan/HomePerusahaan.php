@@ -12,6 +12,7 @@ class HomePerusahaan extends CI_Controller
 
     public function index()
     {
+        $data['total'] = $this->loker_model->TotalLoker();
         $data['loker'] = $this->loker_model->GetLoker()->result();
         $data['title'] = 'JOBBLY - Home';
         $this->load->view('v_perusahaan/header', $data);

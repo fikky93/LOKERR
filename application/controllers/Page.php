@@ -179,6 +179,23 @@ class Page extends CI_Controller
     $this->load->view('admin/detail/v_detail_perusahaan', $data);
   }
 
+  function editLevel()
+  {
+    $id = $this->input->post('id');
+
+    $data = array(
+      'level' => $this->input->post('level')
+    );
+
+    $where = array(
+      'id_perusahaan' => $id
+    );
+
+    $this->perusahaan_model->updateDataPerusahaan($where, $data, 'reg_perusahaan');
+
+    redirect('Page/data_perusahaan');
+  }
+
   function tambahPerusahaan()
   {
     $this->load->view('admin/tambah/v_tambah_perusahaan');

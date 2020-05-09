@@ -26,8 +26,9 @@ class pelamar_model extends CI_Model
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload('foto')) {
-            $error =  $this->upload->display_errors();
-            echo $error;
+            if ($this->upload->display_errors()) {
+                echo $this->session->set_flashdata('msg', 'BELUM MEMASUKKAN FOTO');
+            }
         }
 
         $upload_data = $this->upload->data();
@@ -50,15 +51,7 @@ class pelamar_model extends CI_Model
         );
 
         $this->db->insert('reg_pelamar', $data);
-
-        // $error = $this->db->error();
-
-        // if ($error != null) {
-        //     echo "data belum lengkap";
-        //     unlink($upload_data['full_path']);
-        // } else {
-        //     echo "berhasil";
-        // }
+        echo $this->session->set_flashdata('msg', 'PELAMAR BERHASIL MENDAFTAR');
     }
 
     function edit_TampilPelamar($where, $table)

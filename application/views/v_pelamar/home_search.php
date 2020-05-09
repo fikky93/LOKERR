@@ -6,7 +6,7 @@
 			<div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
 				<div class="text mt-5">
 					<h2><b>Hai , <?php echo $this->session->userdata('ses_nama'); ?> Selamat Datang di Jobpply :)</b></h2>
-					<p class="mb-2 mt-1 pt-3">Kita Mempunyai <span class="number" data-number="184652">0</span> tawaran pekerjaan hebat yang pantas Anda dapatkan</p>
+					<p class="mb-2 mt-1 pt-3">Kita Mempunyai <span class="number" data-number="<?php echo $total["COUNT('id_loker')"] ?>">0</span> tawaran pekerjaan hebat yang pantas Anda dapatkan</p>
 					<h1 class="mb-2">Menargetkan Perkerjaan di Jawa Timur</h1>
 
 					<div class="ftco-search">

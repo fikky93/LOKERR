@@ -38,8 +38,9 @@ class perusahaan_model extends CI_Model
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload('logo')) {
-            $error =  $this->upload->display_errors();
-            echo $error;
+            if ($this->upload->display_errors()) {
+                echo $this->session->set_flashdata('msg', 'BELUM MEMASUKKAN LOGO');
+            }
         }
 
         $upload_data = $this->upload->data();
@@ -47,29 +48,21 @@ class perusahaan_model extends CI_Model
 
         $data = array(
             'logo' => $file_name,
-            'nama' => $this->input->post('nama'),
-            'username' => $this->input->post('username'),
-            'password' => $this->input->post('password'),
-            'email' => $this->input->post('email'),
-            'alamat' => $this->input->post('alamat'),
-            'no_telp' => $this->input->post('no_telp'),
-            'fax' => $this->input->post('fax'),
-            'website' => $this->input->post('website'),
-            'deskripsi' => $this->input->post('deskripsi'),
-            'contact_person' => $this->input->post('contact_person'),
-            'level' => 3
+            'nama' => $this->input->post('nama', TRUE),
+            'username' => $this->input->post('username', TRUE),
+            'password' => $this->input->post('password', TRUE),
+            'email' => $this->input->post('email', TRUE),
+            'alamat' => $this->input->post('alamat', TRUE),
+            'no_telp' => $this->input->post('no_telp', TRUE),
+            'fax' => $this->input->post('fax', TRUE),
+            'website' => $this->input->post('website', TRUE),
+            'deskripsi' => $this->input->post('deskripsi', TRUE),
+            'contact_person' => $this->input->post('contact_person', TRUE),
+            'level' => 0
         );
 
         $this->db->insert('reg_perusahaan', $data);
-
-        // $error = $this->db->error();
-
-        // if ($error != null) {
-        //     echo "data belum lengkap";
-        //     unlink($upload_data['full_path']);
-        // } else {
-        //     echo "berhasil";
-        // }
+        echo $this->session->set_flashdata('msg', 'PERUSAHAAN BERHASIL MENDAFTAR');
     }
 
     public function deletePerusahaan($id)

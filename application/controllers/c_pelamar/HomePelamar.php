@@ -14,6 +14,7 @@ class HomePelamar extends CI_Controller
 
     public function index()
     {
+        $data['total'] = $this->loker_model->TotalLoker();
         $data['loker'] = $this->loker_model->GetLoker()->result();
         $data['prs'] = $this->perusahaan_model->GetPerusahaan()->result();
         $data['title'] = 'JOBBLY - Home';
@@ -24,6 +25,7 @@ class HomePelamar extends CI_Controller
 
     public function search()
     {
+        $data['total'] = $this->loker_model->TotalLoker();
         $keyword = $this->input->post('keyword');
         $data['loker'] = $this->loker_model->getLokerKeyword($keyword);
         $data['prs'] = $this->perusahaan_model->GetPerusahaan()->result();
