@@ -15,7 +15,6 @@
         <div class="row">
 
           <div class="col-md-12 col-lg-8 mb-5">
-
             <?php echo form_open_multipart('c_perusahaan/new_post/tambahDataLoker'); ?>
 
             <div class="row form-group">
@@ -29,6 +28,7 @@
               <label class="font-weight-bold" for="nama_loker">Nama Pekerjaan</label>
               <div class="col-md-12 mb-3 mb-md-0">
                 <input type="text" id="nama_loker" class="form-control" name="nama_loker">
+                <p><?php echo form_error('nama_loker') ?></p>
               </div>
             </div>
 
@@ -59,14 +59,15 @@
                   <input type="radio" id="option-job-type-4" name="kategori" id="kategori" value="Sementara"> Sementara
                 </label>
               </div>
-
+              <p><?php echo form_error('kategori') ?></p>
             </div>
 
             <div class="row form-group mb-4">
               <label class="font-weight-bold" for="alamat">Alamat</label>
               <div class="col-md-12 mb-3 mb-md-0">
-                <input type="text" id="alamat" class="form-control" name="alamat">
+                <input type="text" id="alamat_lkr" class="form-control" name="alamat_lkr">
               </div>
+              <p><?php echo form_error('alamat_lkr') ?></p>
             </div>
 
             <div class="row form-group">
@@ -74,6 +75,7 @@
               <div class="col-md-12 mb-3 mb-md-0">
                 <textarea name="deskripsi" id="deskripsi" class="form-control" cols="10" rows="5"></textarea>
               </div>
+              <p><?php echo form_error('deskripsi') ?></p>
             </div>
 
             <input type="hidden" name="id_perusahaan" id="id_perusahaan" value="<?php echo $this->session->userdata('ses_id'); ?>">

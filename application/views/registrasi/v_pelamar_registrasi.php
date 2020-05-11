@@ -24,7 +24,6 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Sign up Pelamar</h2>
-                        <?php echo validation_errors(); ?>
 
                         <?php echo form_open_multipart('registrasiPelamar/tambahDataPelamar'); ?>
 
@@ -35,39 +34,48 @@
                         <div class="form-group">
                             <h6>Nama</h6>
                             <input type="text" name="nama" id="nama" class="form-control" />
+                            <p><?php echo form_error('nama') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Username</h6>
                             <input type="text" name="username" id="username" class="form-control" />
+                            <p><?php echo form_error('username') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Password</h6>
                             <input type="password" name="password" id="password" class="form-control" />
+                            <p><?php echo form_error('password') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Tanggal lahir</h6>
                             <input type="teks" class="form-control" id="tgl_lahir" name="tgl_lahir">
                             <small id="#" class="form-text text-muted">* penulisan format (Tahun-Bulan-Tanggal)</small>
+                            <p><?php echo form_error('tgl_lahir') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Email</h6>
                             <input type="email" name="email" id="email" class="form-control" />
+                            <p><?php echo form_error('email') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>No Telp</h6>
                             <input type="teks" class="form-control" id="no_telp" name="no_telp">
+                            <p><?php echo form_error('no_telp') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Tinggi Badan</h6>
                             <input type="number" class="form-control" id="tinggi_bdn" name="tinggi_bdn">
+                            <p><?php echo form_error('tinggi_bdn') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Berat Badan</h6>
                             <input type="number" class="form-control" id="berat_bdn" name="berat_bdn">
+                            <p><?php echo form_error('berat_bdn') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Alamat</h6>
                             <textarea class="form-control" id="alamat" rows="6" name="alamat" style="resize: none; width: 100%; height: 100px;"></textarea>
+                            <p><?php echo form_error('alamat') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Lulusan</h6>
@@ -77,6 +85,7 @@
                                 <option value="S1">S1</option>
                                 <option value="S2">S2</option>
                             </select>
+                            <p><?php echo form_error('lulusan') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Jenis Kelamin</h6>
@@ -84,6 +93,7 @@
                                 <option value="laki laki">Laki laki</option>
                                 <option value="perempuan">Perempuan</option>
                             </select>
+                            <p><?php echo form_error('jenis_kelamin') ?></p>
                         </div>
 
 

@@ -59,7 +59,7 @@ class loker_model extends CI_Model
         $data = array(
             'gambar' => $file_name,
             'nama_loker' => $this->input->post('nama_loker'),
-            'alamat_lkr' => $this->input->post('alamat'),
+            'alamat_lkr' => $this->input->post('alamat_lkr'),
             'deskripsi' => $this->input->post('deskripsi'),
             'kategori' => $this->input->post('kategori'),
             'id_perusahaan' => $this->input->post('id_perusahaan')

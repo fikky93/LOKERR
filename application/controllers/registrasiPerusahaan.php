@@ -32,14 +32,14 @@ class registrasiPerusahaan extends CI_Controller
 
         if ($this->form_validation->run() == true) {
             $this->perusahaan_model->AddPerusahaan();
+
+            $data['title'] = 'JOBBLY - login';
+            $this->load->view('header', $data);
+            $this->load->view('login/v_login');
         } else {
             $data['title'] = 'Registrasi perusahaan';
+            $this->load->view('header', $data);
             $this->load->view('registrasi/v_perusahaan_registrasi', $data);
         }
-
-
-        $data['title'] = 'JOBBLY - login';
-        $this->load->view('header', $data);
-        $this->load->view('login/v_login');
     }
 }

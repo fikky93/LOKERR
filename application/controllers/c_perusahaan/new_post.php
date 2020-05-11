@@ -25,12 +25,22 @@ class new_post extends CI_Controller
 
     function tambahDataLoker()
     {
-        $this->loker_model->AddLoker();
+        $this->form_validation->set_rules('nama_loker', 'Nama_loker', 'required');
+        $this->form_validation->set_rules('kategori', 'Kategori', 'required');
+        $this->form_validation->set_rules('alamat_lkr', 'Alamat_lkr', 'required');
+        $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
 
-        $data['loker'] = $this->loker_model->GetLoker()->result();
-        $data['title'] = 'JOBBLY - List';
-        $this->load->view('v_perusahaan/header', $data);
-        $this->load->view('v_perusahaan/list', $data);
-        $this->load->view('v_perusahaan/footer');
+        if ($this->form_validation->run() == true) {
+
+            $this->loker_model->AddLoker();
+
+            $data['loker'] = $this->loker_model->GetLoker()->result();
+            $data['title'] = 'JOBBLY - List';
+            $this->load->view('v_perusahaan/header', $data);
+            $this->load->view('v_perusahaan/list', $data);
+            $this->load->view('v_perusahaan/footer');
+        } else {
+            redirect('c_perusahaan/new_post');
+        }
     }
 }

@@ -23,7 +23,6 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Sign up Perusahaan</h2>
-                        <?php echo validation_errors(); ?>
 
                         <?php echo form_open_multipart('registrasiPerusahaan/tambahDataPerusahaan'); ?>
 
@@ -34,42 +33,52 @@
                         <div class="form-group">
                             <h6>Nama Perusahaan</h6>
                             <input type="teks" class="form-control" id="nama" name="nama">
+                            <p><?php echo form_error('nama') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Username login</h6>
                             <input type="teks" class="form-control" id="username" name="username">
+                            <p><?php echo form_error('username') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Password</h6>
                             <input type="password" class="form-control" id="password" name="password">
+                            <p><?php echo form_error('password') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Email</h6>
                             <input type="email" class="form-control" id="email" name="email">
+                            <p><?php echo form_error('email') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Alamat Perusahaan</h6>
                             <textarea class="form-control" id="alamat" style="resize: none; width: 100%; height: 100px;" name="alamat"></textarea>
+                            <p><?php echo form_error('alamat') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>No Telp</h6>
                             <input type="teks" class="form-control" id="no_telp" name="no_telp">
+                            <p><?php echo form_error('no_telp') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Fax</h6>
                             <input type="teks" class="form-control" id="fax" name="fax">
+                            <p><?php echo form_error('fax') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Website</h6>
                             <input type="teks" class="form-control" id="website" name="website">
+                            <p><?php echo form_error('website') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Contact Person</h6>
                             <input type="teks" class="form-control" id="contact_person" name="contact_person">
+                            <p><?php echo form_error('contact_person') ?></p>
                         </div>
                         <div class="form-group">
                             <h6>Deskripsi</h6>
                             <textarea class="form-control" id="deskripsi" style="resize: none; width: 100%; height: 100px;" name="deskripsi"></textarea>
+                            <p><?php echo form_error('deskripsi') ?></p>
                         </div>
                         <div class="form-group form-button">
                             <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />

@@ -32,14 +32,14 @@ class registrasiPelamar extends CI_Controller
 
         if ($this->form_validation->run() == true) {
             $this->pelamar_model->AddPelamar();
+
+            $data['title'] = 'JOBBLY - login';
+            $this->load->view('header', $data);
+            $this->load->view('login/v_login');
         } else {
             $data['title'] = 'Registrasi Pelamar';
             $this->load->view('header', $data);
             $this->load->view('registrasi/v_pelamar_registrasi', $data);
         }
-
-        $data['title'] = 'JOBBLY - login';
-        $this->load->view('header', $data);
-        $this->load->view('login/v_login');
     }
 }
