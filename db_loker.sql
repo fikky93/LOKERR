@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Bulan Mei 2020 pada 17.56
+-- Waktu pembuatan: 15 Bulan Mei 2020 pada 04.44
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `form_pelamaran` (
   `id_perusahaan` int(11) NOT NULL,
   `id_loker` int(11) NOT NULL,
   PRIMARY KEY (`id_form_pelamaran`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `form_pelamaran`
@@ -99,14 +99,14 @@ CREATE TABLE IF NOT EXISTS `loker` (
   `kategori` varchar(50) NOT NULL,
   `id_perusahaan` int(11) NOT NULL,
   PRIMARY KEY (`id_loker`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `loker`
 --
 
 INSERT INTO `loker` (`id_loker`, `nama_loker`, `gambar`, `alamat_lkr`, `deskripsi`, `kategori`, `id_perusahaan`) VALUES
-(1, 'Programmer', 'Programmer.jpeg', 'surabaya', 'Desain-Desain', 'full time', 4),
+(1, 'Network engineer', 'Network_engineer.jpeg', 'surabaya', 'ini network engineer', 'full time', 4),
 (2, 'Back-End Developer', 'Back-End_Developer.jpg', 'pasuruan', 'periklanan', 'part time', 5),
 (3, 'Software developer', 'Software_developer.jpeg', 'jember', 'sosial human', 'full time', 4),
 (4, 'Developer website', 'Developer_website.jpg', 'sidoarjo', 'pengelola data basis', 'part time', 3),
@@ -115,10 +115,9 @@ INSERT INTO `loker` (`id_loker`, `nama_loker`, `gambar`, `alamat_lkr`, `deskrips
 (8, 'Designer', 'Designer.jpeg', 'malang', 'pemasaran', 'freelance', 4),
 (9, 'Project manager', 'Project_manager.jpeg', 'probolinggo', 'manager', 'part time', 3),
 (11, 'System Administrator', 'System_Administrator.jpg', 'PLN pusat surabaya', 'Minimal D3 Teknik Informatika, laki-laki minimal 20 thn.', 'part time', 5),
-(12, 'Design Banner', 'Design_Banner.jpg', 'surabaya', 'ini design banner', 'Part Time', 3),
-(13, 'Design stiker', 'Design_stiker.jpg', 'bangil', 'ini design stiker', 'Sementara', 3),
-(14, 'program', 'program.jpg', 'malang', 'daaaa', 'Freelance', 3),
-(15, 'egaaaa', 'egaaaa.jpeg', 'bjn', 'specification', 'Full Time', 4);
+(12, 'IT support', 'IT_support.jpg', 'surabaya', 'ini IT support', 'Part Time', 3),
+(13, 'IT programmer', 'IT_programmer.jpg', 'bangil', 'ini it programmer', 'Sementara', 3),
+(16, 'Programmer', 'Programmer.jpg', 'bojonegoro', 'ini programmer', 'part time', 4);
 
 -- --------------------------------------------------------
 

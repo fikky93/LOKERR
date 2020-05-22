@@ -335,7 +335,7 @@
 						<a href="#" class="company-wrap"><img src="<?php echo base_url(); ?>/foto_perusahaan/<?= $prs[1]->logo ?>" class="img-fluid" alt="Colorlib Free Template"></a>
 						<div class="text p-3">
 							<h3><a href="#"><?= $prs[1]->nama ?></a></h3>
-							<p><span class="number">500</span> <span>Open position</span></p>
+							<p> <span>Open position</span></p>
 						</div>
 					</div>
 				</div>
@@ -344,7 +344,7 @@
 						<a href="#" class="company-wrap"><img src="<?php echo base_url(); ?>/foto_perusahaan/<?= $prs[2]->logo ?>" class="img-fluid" alt="Colorlib Free Template"></a>
 						<div class="text p-3">
 							<h3><a href="#"><?= $prs[2]->nama ?></a></h3>
-							<p><span class="number">700</span> <span>Open position</span></p>
+							<p> <span>Open position</span></p>
 						</div>
 					</div>
 				</div>
@@ -353,7 +353,7 @@
 						<a href="#" class="company-wrap"><img src="<?php echo base_url(); ?>/foto_perusahaan/<?= $prs[3]->logo ?>" class="img-fluid" alt="Colorlib Free Template"></a>
 						<div class="text p-3">
 							<h3><a href="#"><?= $prs[3]->nama ?></a></h3>
-							<p><span class="number">700</span> <span>Open position</span></p>
+							<p> <span>Open position</span></p>
 						</div>
 					</div>
 				</div>
